@@ -28,3 +28,9 @@ Con el medidor de entrada funcionando, inicia una llamada de 30 minutos y apaga 
 - **Ruido:** deja el teléfono en el mismo lugar y graba dos veces la misma frase en el PC, primero sin filtro y después con él. Deja unos segundos de silencio con el ventilador encendido y pulsa varias teclas, tanto en silencio como mientras hablas. Compara al mismo volumen y sin el filtro de Discord o Zoom para escuchar solo el efecto del teléfono. Un ruido continuo suele ser más fácil de atenuar que una tecla pulsada mientras hablas.
 - **Vídeo:** desde el PC configurado en Android, abre la dirección de vídeo indicada por la app. Si la imagen se ve en el navegador, la transmisión hasta el PC funciona. Para que una aplicación de llamadas la reconozca como cámara en Windows 10, usa esa dirección como fuente multimedia de red en OBS y activa su cámara virtual. Selecciona **OBS Virtual Camera** para el vídeo y **CABLE Output** para la voz.
 - **Consumo:** compara solo micrófono frente a micrófono + cámara por separado. Si utilizas el navegador u OBS para el vídeo, incluye ese proceso en la medición; la memoria del receptor por sí sola no representa el coste del vídeo.
+
+## Integración continua
+
+El flujo [CI de GitHub Actions](https://github.com/HeberYesid/MicroWifi/actions/workflows/ci.yml) se ejecuta en los envíos y solicitudes de cambio a `main`, y también se puede iniciar manualmente. Compila el APK de depuración, ejecuta las pruebas unitarias y lint de Android, y compila el receptor x64 y ejecuta la prueba del protocolo en Windows.
+
+Tras un envío a `main`, la ejecución deja disponibles durante 14 días el APK de depuración y el ejecutable de Windows, si pasan las comprobaciones respectivas. Son artefactos de prueba, no versiones publicadas; el APK usa la clave de depuración del entorno de compilación. La transmisión con un teléfono y la salida por VB-CABLE se comprueban aparte con equipos reales.
