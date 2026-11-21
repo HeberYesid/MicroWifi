@@ -1,0 +1,3 @@
+Fuentes y pesos integrados de [Xiph RNNoise v0.1.1](https://github.com/xiph/rnnoise/tree/6cbfd53eb348a8d394e0757b4025c6ded34eb2b6), revisión `6cbfd53eb348a8d394e0757b4025c6ded34eb2b6`. Licencia y autores: `COPYING`, `AUTHORS`. Se incluyen solo los archivos que compila la biblioteca. CMake no descarga el modelo.
+
+Cambios locales: en `src/denoise.c`, preparar las tablas al crear el estado y comprobar fallos de memoria del estado, tablas FFT y GRU; el puente JNI serializa la primera inicialización. En `src/rnn.c`, reemplazar dos desreferencias nulas intencionales por `abort()` para los tipos de activación inválidos, que no usa el modelo integrado. No se modificaron los pesos ni el algoritmo de supresión.

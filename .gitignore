@@ -1,0 +1,9 @@
+/windows/*.exe
+/windows/*.obj
+/windows/*.pdb
+*.apk
+*.aab
+*.jks
+*.keystore
+.env
+.env.*
